@@ -1,0 +1,20 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Agregar Tarea{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Agregar Tarea</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="taskTitle" class="form-label">Título de la Tarea</label>
+        <input type="text" class="form-control" id="taskTitle" name="title" placeholder="Escribe el nombre de la tarea">
+    </div>
+    <div class="mb-3">
+        <label for="taskDescription" class="form-label">Descripción de la Tarea</label>
+        <textarea class="form-control" id="taskDescription" name="description"
+            placeholder="Escribe la descripción"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}
